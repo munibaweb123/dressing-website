@@ -75,8 +75,29 @@ export default function CheckoutPage() {
       title: 'Order Placed',
       text: 'Your order has been placed successfully!',
       icon: 'success',
-      confirmButtonText: 'OK'
-    })
+      confirmButtonText: 'OK',
+      showCancelButton: true,
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33'
+    }).then((result) => {
+      if (result.isConfirmed) {
+      if (validateForm()) {
+        localStorage.removeItem("appliedDiscount");
+        Swal.fire(
+        "Success!",
+        "Your order has been successfully processed!",
+        "success"
+        );
+      } else {
+        Swal.fire(
+        "Error!",
+        "Please fill in all the fields before processing.",
+        "error"
+        );
+      }
+      }
+    });
     const orderData = {
       _type: 'order',
       firstName: formValues.firstName,

@@ -13,7 +13,7 @@ export const product = defineType({
         {
             name: "title",
             title: "Title",
-            validation: (rule: any) => rule.required(),
+            validation: (rule) => rule.required(),
             type: "string"
         },
         {

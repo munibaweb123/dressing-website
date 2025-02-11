@@ -1,8 +1,9 @@
 import { shipEngine } from "@/helper/shipEngine";
 import { NextRequest } from "next/server";
 
-export async function GET(req: NextRequest) {
+export async function GET(_req: NextRequest) {
   return new Response(JSON.stringify({ message: "shipengine testing" }))
+  
 }
 
 export async function POST(req: NextRequest) {
@@ -34,7 +35,7 @@ export async function POST(req: NextRequest) {
     });
     return new Response(JSON.stringify(shipmentDetails),{status:200})
 
-  }catch(error){
+  }catch{
     return new Response(JSON.stringify({ message: "error" }))
 
   }

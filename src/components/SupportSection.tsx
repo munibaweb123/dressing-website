@@ -46,7 +46,7 @@ const SupportSection = () => {
           <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-6 h-10 w-10 border-t border-l border-gray-400 rotate-45 bg-white"></div>
         </div>
         <h4 className="mt-6 text-sm uppercase tracking-widest text-gray-500">
-          We Can't Wait to Meet You
+          We Can&apos;t Wait to Meet You
         </h4>
         <h2 className="mt-2 text-3xl font-bold text-gray-900">Let’s Talk</h2>
         <Button className="mt-6 bg-blue-500 text-white px-6 py-3 rounded-lg">Try it free now</Button>

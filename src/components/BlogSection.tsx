@@ -25,7 +25,7 @@ const BlogSection = () => (
             (L&apos;integral) {index + 1}
             </h4>
             <p className="text-sm text-gray-600">We focus on ergonomics and meeting
-              you where you work. It's only a
+              you where you work. It&apos;s only a
               keystroke away.</p>
             <Button variant="link">Learn More &gt;</Button>
           </CardContent>
