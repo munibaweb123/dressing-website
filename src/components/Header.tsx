@@ -50,7 +50,7 @@ const Header: React.FC = () => {
               </div>
               <nav className="flex flex-col gap-6 p-4 sm:hidden">
                 <Link href="/" className="hover:text-blue-500">Home</Link>
-                {['Shop', 'About', 'Blog', 'Contact', 'Pricing', 'Product'].map((item) => (
+                {['Shop', 'About', 'Blog', 'Contact', 'Pricing', 'Cart'].map((item) => (
                   <Link key={item} href={`/${item.toLowerCase()}`} className="hover:text-blue-500">
                     {item}
                   </Link>
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
         {/* Desktop Navigation */}
         <nav className="hidden sm:flex gap-6">
           <Link href="/" className="hover:text-blue-500">Home</Link>
-          {['Shop', 'About', 'Blog', 'Contact','Pricing', 'Product'].map((item) => (
+          {['Shop', 'About', 'Blog', 'Contact','Pricing', 'Cart'].map((item) => (
             <Link key={item} href={`/${item.toLowerCase()}`} className="hover:text-blue-500">
               {item}
             </Link>
