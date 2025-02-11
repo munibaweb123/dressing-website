@@ -6,9 +6,14 @@ export const product = defineType({
     type: "document",
     fields: [
         {
+            name:"id",
+            title:"ID",
+            type:"string",
+        },
+        {
             name: "title",
             title: "Title",
-            validation: (rule) => rule.required(),
+            validation: (rule: any) => rule.required(),
             type: "string"
         },
         {
@@ -34,6 +39,11 @@ export const product = defineType({
             type: "array",
             title: "Tags",
             of: [{ type: "string" }]
+        },
+        {
+            name:"stock",
+            type:"number",
+            title:"Stock",
         },
         {
             name:"dicountPercentage",
