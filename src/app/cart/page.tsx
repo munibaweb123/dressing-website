@@ -11,6 +11,7 @@ import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
 import Swal from "sweetalert2";
 import { Product } from "../types";
+import { useRouter } from "next/navigation";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState<Product[]>([]);
@@ -66,31 +67,37 @@ const CartPage = () => {
       0
     );
   };
+const router = useRouter();
+const handleProceed = () => {
+  Swal.fire({
+    title: "Processing your order...",
+    text: "Please wait a moment.",
+    icon: "info",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Proceed",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        "Success!",
+        "Your order has been successfully processed!",
+        "success"
+      );
+     
+      
+      // Clear cart from the storage
+      // localStorage.removeItem("cart"); // If using localStorage
+      setCartItems([]); // Clear local state
+      router.push("/checkout");
+    
+    }
+  });
+};
 
-  const handleProceed = () => {
-    Swal.fire({
-      title: "Processing your order...",
-      text: "Please wait a moment.",
-      icon: "info",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Proceed",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire(
-          "Success!",
-          "Your order has been successfully processed!",
-          "success"
-        );
-        // Clear the cart after proceeding (optional)
-        setCartItems([]);
-      }
-    });
-  };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6 bg-gray-100 min-h-screen max-w-6xl mx-auto">
       <h1 className="text-2xl font-bold mb-6 text-gray-800">Shopping Cart</h1>
 
       <div className="space-y-6">

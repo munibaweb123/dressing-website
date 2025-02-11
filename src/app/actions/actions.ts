@@ -1,3 +1,4 @@
+import { client } from "@/sanity/lib/client"
 import { Product } from "../types"
 
 
@@ -35,6 +36,9 @@ export const updateCartQuantity = (productId :string, quantity : number) => {
     }
 }
 
-export const getCartItems = () : Product[] => {
-    return JSON.parse(localStorage.getItem('cart') || '[]')
-}
+export const getCartItems = (): Product[] => {
+    if (typeof window !== "undefined") {
+      return JSON.parse(localStorage.getItem("cart") || "[]");
+    }
+    return [];
+  };

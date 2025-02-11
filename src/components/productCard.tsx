@@ -45,7 +45,7 @@ const CardText: React.FC<CardTextProps> = ({ id, title, description, price, quan
           {price} {/* Use dynamic price */}
         </h5>
        </div>
-       <button className="bg-gradient-to-r from-blue-500 to-blue-950 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out"
+       <button className="bg-gradient-to-r from-blue-500 to-[#23A6F0] text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:shadow-lg hover:scale-110 transition-transform duration-300 ease-in-out"
         onClick={(e)=>handleAddToCart(e, { id, title, description, price, quantity, stock, image })}>
           Add to Cart
         </button>
