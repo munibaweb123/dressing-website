@@ -12,6 +12,7 @@ import { urlFor } from "@/sanity/lib/image";
 import Swal from "sweetalert2";
 import { Product } from "../types";
 import { useRouter } from "next/navigation";
+import AuthGuard from "@/components/AuthGuard";
 
 const CartPage = () => {
   const [cartItems, setCartItems] = useState<Product[]>([]);
@@ -97,6 +98,7 @@ const handleProceed = () => {
 
 
   return (
+    <AuthGuard>
     <div className="p-6 bg-gray-100 min-h-screen max-w-6xl mx-auto">
       <h1 className="text-2xl font-bold mb-6 text-gray-800">Shopping Cart</h1>
 
@@ -169,6 +171,7 @@ const handleProceed = () => {
         </div>
       )}
     </div>
+    </AuthGuard>
   );
 };
 
